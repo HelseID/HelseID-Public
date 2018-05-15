@@ -11,12 +11,16 @@ Et scope indikerer hva slags ressurser et token skal få tilgang til. Det være 
 
 Tilgang til ett API (Ressurs)
 =============================
+
 API-ressurs
 ^^^^^^^^^^^
 En ressurs er noe du ønsker å beskytte med HelseID, enten identitetsdata for dine brukere eller API'er. Enhver ressurs er identitfisert med et unikt navn, og klienter benytter dette navnet når de spesifiserer hvilke resursser de ønkser tilgang til. API-ressurser representerer funksjonalitet som en klient ønsker å påberope seg - typisk modellert som web-APIer, men ikke nødvendigvis. En tilgangstoken tillater tilgang til en API ressurs. Klienter ber om tilgangsfunksjoner og send dem til API-en. Tilgangstokenetter inneholder informasjon om klienten og brukeren (hvis den er til stede). APIer bruker denne informasjonen til å tillate tilgang til dataene sine.
+
+
 Scope
 ^^^^^
 I det enkleste tilfellet har ett API nøyaktig ett scope. Men det er tilfeller hvor man kanskje vil dele opp funksjonaliteten til ett API, og gi forskjellige klienter tilgang til ulike deler. Dette løses ved å definerer forskjellige scopes for dette API-et.
+
 Audience
 ^^^^^^^^
 Det unike navnet som identifiserer et API. Dette navnet vil bli satt i audience for access tokenet når det inneholder scopes relatert til API-et.
@@ -28,6 +32,7 @@ Tenk senarioet hvor en client trenger å be om tilgang til flere ressurser. Dett
 Alt i ett token (Circle of trust)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Fordeler: enkelt, slipper å eksponsere tilgangsinformasjon til andre ressurser, Bakdeler: risiko for impersonering.
+
 Ett token for hver tilgang
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Fordeler: Mindre risiko for misbruk, bakdeler: mer kompleksitet rundt håndtering av flere access tokens, flere kall til HelseID.
@@ -39,6 +44,7 @@ Tenk på følgende scenario: En front-end-klient kaller et API ved hjelp av et t
 Impersonering
 ^^^^^^^^^^^^^
 Når aktør A etterligner aktør B, er A gitt alle rettighetene B har innenfor noen definerte rettighetssammenheng og er skiller seg fra B i den sammenhengen. Når aktør A etterligner aktør B, så er det i den grad noen enhet som mottar et slikt token, faktisk handler med B. Det er sant at enkelte medlemmer av identitetssystemet kan ha bevissthet om at etterligning skjer, men det er ikke et krav. For all hensikt og når A er etterligner B, er A B.
+
 Delegering
 ^^^^^^^^^^
 Delegasjonssemantikk er annerledes enn etterligningssemantikk, selv om de to er nært beslektede. Med delegasjonssemantikk har prinsipper A fortsatt sin egen identitet skilt fra B, og det er eksplisitt forstått at mens B kan ha delegert noen av sine rettigheter til A, blir alle handlinger tatt av A som representerer B. På en måte er A en an agent for B. Delegasjon og etterligning er ikke gjeldende i alle situasjoner. Når en aktør opptrer direkte på egne vegne, er det verken delegasjon eller etterligning som er i spill. De er imidlertid de vanligste semantikkene som gjelder for tokenutveksling.
