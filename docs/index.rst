@@ -20,4 +20,4 @@ Welcome to HelseID's technical documentation!
    :caption: Topics
    
    topics/enterprise_certificates
-   topics/token_exchange
+   topics/access_resource
