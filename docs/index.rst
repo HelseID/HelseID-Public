@@ -21,3 +21,4 @@ Welcome to HelseID's technical documentation!
    
    topics/enterprise_certificates
    topics/access_resource
+   topics/id_porten

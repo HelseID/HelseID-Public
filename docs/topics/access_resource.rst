@@ -3,6 +3,7 @@ Forespørsel om tilgang til ressurs
 
 En klient må få konfigurert en eksplisitt tillatelse til å få utstedt et token som kan brukes mot et spesifikt API. Denne tillatelsen uttrykker vi med det vi kaller et scope.
 Et tenkt eksempel på et scope i OAuth 2.0 sammenheng kunne ha vært "https://www.minehelsedata.no/patient/read" - som f.eks kunne ha gitt en klient tilgang til å lese pasientdata fra et API.
+
 Når klienten ber om et Access Token må den altså angi ønsket scope i forespørselen, og dersom klientens konfigurasjon i HelseID tilsier at den har tilgang til dette scopet kan HelseID generere og utstede et nytt token. Når APIet så mottar forespørselen må det verifisere at det riktige scopet er angitt i Access Tokenet, og at sikkerhetsbilletten er gyldig. 
 
 Scope
