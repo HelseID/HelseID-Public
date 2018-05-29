@@ -44,8 +44,8 @@ You can manually create a basic authentication header using the following C# cod
 The `IdentityModel <https://github.com/IdentityModel/IdentityModel2>`_ library has helper classes called ``TokenClient`` and ``IntrospectionClient`` that encapsulate
 both authentication and protocol messages.
 
-asynchronous cryptography
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Cryptography
+^^^^^^^^^^^^
 There are other techniques to authenticate clients, e.g. based on public/private key cryptography.
 HelseID includes support for private key JWT client secrets (see `RFC 7523 <https://tools.ietf.org/html/rfc7523>`_).
 The supported methods are self signed X509 certificates, RSA keypair and enterprise certificates. 
