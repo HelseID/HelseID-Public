@@ -8,8 +8,8 @@ In certain situations, clients need to authenticate with HelseID, e.g.
 
 For that purpose you can assign a list of secrets to a client or an API resource.
 
-Creating a shared secret
-^^^^^^^^^^^^^^^^^^^^^^^^
+Shared secret
+^^^^^^^^^^^^^
 The following code sets up a hashed shared secret::
 
     var secret = new Secret("secret".Sha256());
@@ -17,8 +17,6 @@ The following code sets up a hashed shared secret::
 This secret can now be assigned to either a ``Client`` or an ``ApiResource``. 
 Notice that both do not only support a single secret, but multiple. This is useful for secret rollover and rotation.
 
-Authentication using a shared secret
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You can either send the client id/secret combination as part of the POST body::
 
     POST /connect/token
@@ -46,8 +44,8 @@ You can manually create a basic authentication header using the following C# cod
 The `IdentityModel <https://github.com/IdentityModel/IdentityModel2>`_ library has helper classes called ``TokenClient`` and ``IntrospectionClient`` that encapsulate
 both authentication and protocol messages.
 
-Beyond shared secrets
-^^^^^^^^^^^^^^^^^^^^^
+asynchronous cryptography
+^^^^^^^^^^^^^^^^^^^^^^^^^
 There are other techniques to authenticate clients, e.g. based on public/private key cryptography.
 HelseID includes support for private key JWT client secrets (see `RFC 7523 <https://tools.ietf.org/html/rfc7523>`_).
 The supported methods are self signed X509 certificates, RSA keypair and enterprise certificates. 
