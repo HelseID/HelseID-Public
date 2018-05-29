@@ -20,6 +20,15 @@ Welcome to HelseID's technical documentation!
    :caption: Topics
    
    topics/enterprise_certificates
+   topics/general_use
    topics/access_resource
    topics/id_porten
    topics/client_authentication
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Endpoints
+
+   endpoints/authorize
+   

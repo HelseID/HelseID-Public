@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'HelseID'
-copyright = '2018, NHN'
+copyright = '2018, Norsk Helsenett'
 author = 'NHN'
 
 # The short X.Y version
