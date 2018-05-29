@@ -30,4 +30,5 @@ Welcome to HelseID's technical documentation!
    :caption: Endpoints
 
    endpoints/authorize
+   endpoints/token
    
