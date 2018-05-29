@@ -20,5 +20,6 @@ Welcome to HelseID's technical documentation!
    :caption: Topics
    
    topics/enterprise_certificates
+   topics/general_use
    topics/access_resource
    topics/id_porten
