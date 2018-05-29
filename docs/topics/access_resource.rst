@@ -7,7 +7,7 @@ An example of a scope in OAuth 2.0 therms could e.g. be "https://www.minehelseda
 When a client issues a request for an access token it also needs to provide which scopes it wants in the token. If the configuration in HelseID reflects that the client is allowed to ask for these scopes they will be added to the access token.
 
 Scope
-=====
+^^^^^
 A scope indicates what type of resource an access token is given right to access. Since a scope gives access to a resource is can be looked on as an authorization. However, it is important to notice that this is an authorization on the client level and not the user level. When securing an resource with HelseID it needs to be expressed as a minimum of one scope. Multiple scopes could be defined for the same resource in order to give the correct resolution of the access.
 
 Access to an API (Resource)
