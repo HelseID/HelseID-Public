@@ -15,7 +15,7 @@ Welcome to HelseID's technical documentation!
    intro/architecture
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    :caption: Topics
    
