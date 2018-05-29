@@ -46,7 +46,6 @@ Access on behalf of user (Token exchange)
 Imagine the following scenario: a front end client calls a middle tier API using a token acquired via an interactive flow (e.g. hybrid flow). This middle tier API (API 1) now wants to call a back end API (API 2) on behalf of the interactive user.
 In other words, the middle tier API (API 1) needs an access token containing the user’s identity, but with the scope of the back end API (API 2). You might have heard of the term poor man’s delegation where the access token from the front end is simply forwarded to the back end.
 This has some shortcomings, e.g. API 2 must now accept the API 1 scope which would allow the user to call API 2 directly. Also - you might want to add some delegation specific claims into the token, e.g. the fact that the call path is via API 1.
-Tenk på følgende scenario: En front-end-klient kaller et API ved hjelp av et token utstedt via en interaktiv flyt (for hybrid flow). 
 
 Impersonation
 ^^^^^^^^^^^^^
