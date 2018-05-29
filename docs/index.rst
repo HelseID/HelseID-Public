@@ -23,3 +23,11 @@ Welcome to HelseID's technical documentation!
    topics/general_use
    topics/access_resource
    topics/id_porten
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Endpoints
+
+   endpoints/authorize
+   
