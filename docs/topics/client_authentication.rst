@@ -112,9 +112,3 @@ Using an enterprise certificate provides HelseID with some organizational claims
 - `helseid://claims/client/ec/orgnr_child`
 
 - `helseid://claims/client/ec/exp`
-
-
-
-
-
-

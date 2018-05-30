@@ -31,6 +31,7 @@ Exchanging token issued by HelseId ::
         "exp":1443904177,
         "nbf":1443904077,
         "clientId": "testClient",
+        "helseid://claims/identity/pid":240194911117,
         "scope" : "https://consumer.example.com.read",
         "sub": "24019491117" 
         "amr" : "bankId"
@@ -43,10 +44,12 @@ Exchanging token issued by HelseId ::
         "exp":1443904177,
         "nbf":1443904077,
         "clientId": "https://consumer.example.com",
+        "helseid://claims/identity/pid":240194911117,
         "scope" : "https://consumer2.example.com.read",
         "sub": "24019491117",
         "act":
         {
+            "iss":"https://helseid-sts.nhn.no",
             "sub": "24019491117",
             "clientId": "testClient"
         }
@@ -62,6 +65,7 @@ Exchanging token issued by "trusted issuer" ::
         "exp":1443904177,
         "nbf":1443904077,
         "clientId": "testClient",
+        "helseid://claims/identity/pid":240194911117,
         "scope" : "https://consumer.example.com.read",
         "sub": "24019491117" 
         "amr" : "bankId"
@@ -74,10 +78,12 @@ Exchanging token issued by "trusted issuer" ::
         "exp":1443904177,
         "nbf":1443904077,
         "clientId": "https://consumer.example.com",
+        "helseid://claims/identity/pid":240194911117,
         "scope" : "https://consumer2.example.com.read",
         "sub": "24019491117",
         "act":
         {
+            "iss":"https://trustedIssuer-sts.no",
             "sub": "24019491117",
             "clientId": "testClient"
         }
