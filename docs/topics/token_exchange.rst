@@ -94,7 +94,8 @@ The following code is an example of how to exchange a token ::
 
     var response = await client.RequestCustomGrantAsync("token_exchange", _options.Scope, payload);
 
-The details worth noting are: 
+The details worth noting are:
+
 - That the grand type is "token_exchange". 
 - The payload is an object with a token property which value is an valid access token.
 
@@ -102,6 +103,7 @@ The details worth noting are:
 
 
 In order to use the token exchange mechanism one needs to:
+
 - Be configured in HelseID to use the grant type `token_exchange`.
 - Obtain a valid access token from a third party.
 
