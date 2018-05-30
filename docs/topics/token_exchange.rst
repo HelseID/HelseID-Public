@@ -104,4 +104,5 @@ The details worth noting are:
 In order to use the token exchange mechanism one needs to:
 - Be configured in HelseID to use the grant type `token_exchange`.
 - Obtain a valid access token from a third party.
+
 - Be configured to use the scopes requested in the exchange request.
