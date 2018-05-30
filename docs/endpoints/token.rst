@@ -2,7 +2,7 @@ Token Endpoint
 ==============
 
 The token endpoint can be used to programmatically request tokens.
-It supports the ``password``, ``authorization_code``, ``client_credentials``, ``refresh_token`` and ``token_exchange``  grant types).
+It supports the ``password``, ``authorization_code``, ``client_credentials``, ``refresh_token`` and ``token_exchange`` grant types).
 
 
 ``client_id``
