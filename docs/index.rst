@@ -24,6 +24,7 @@ Welcome to HelseID's technical documentation!
    topics/access_resource
    topics/id_porten
    topics/client_authentication
+   topics/token_excahnge
 
 .. toctree::
    :maxdepth: 2

@@ -128,7 +128,7 @@ This is done in the following way ::
             token.Header.Add("n", modulus);	
         }	
 
-Using an enterprise certificate provides HelseID with some organizational claims which can be used in the generation of tokens. They consists of: 
+Using an enterprise certificate provides HelseID with some organizational claims which can be used in the generation of tokens. They consist of: 
 
 - `helseid://claims/client/ec/orgnr_parent`
 - `helseid://claims/client/ec/orgnr_child`
