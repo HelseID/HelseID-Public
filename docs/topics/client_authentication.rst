@@ -50,31 +50,9 @@ There are other techniques to authenticate clients, e.g. based on public/private
 HelseID includes support for private key JWT client secrets (see `RFC 7523 <https://tools.ietf.org/html/rfc7523>`_).
 The supported methods are self signed X509 certificates, RSA keypair and enterprise certificates. 
 
-X509 certificates
-"""""""""""""""""
-
-To request a token, you need to supply the client certificate to the HTTP client and add the client ID to the post body. 
-The following example uses the IdentityModel OAuth2 client ::
-
-    async Task<TokenResponse> RequestTokenAsync()
-    {
-        var cert = new X509Certificate2("Client.pfx");
-
-        var handler = new WebRequestHandler();
-        handler.ClientCertificates.Add(cert);
-
-        var client = new OAuth2Client(
-            new Uri("https://identityserver.io/core/connect/token"),
-            "certclient",
-            handler);
-
-        return await client.RequestClientCredentialsAsync("read write");
-    }
-
 Client assertion
 """"""""""""""""
-To use a enterprise certificate or a RSA keypair involves creating a client assertion, a jwt structure with client information, signed with the private key. 
-
+To use a certificate or a RSA keypair involves creating a client assertion, a jwt structure with client information, signed with the private key. 
 
 The following code creates the base of a client assertion ::
 
