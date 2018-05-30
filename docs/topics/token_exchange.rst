@@ -23,6 +23,8 @@ Token exchange
 ^^^^^^^^^^^^^^
 
 Exchanging token issued by HelseId ::
+
+    Original:
     {
         "aud":"https://consumer.example.com",
         "iss":"https://helseid-sts.nhn.no",
@@ -34,6 +36,7 @@ Exchanging token issued by HelseId ::
         "amr" : "bankId"
     }
 
+    Exchanged:
     {
         "aud":"https://consumer2.example.com",
         "iss":"https://helseid-sts.nhn.no",
@@ -52,7 +55,8 @@ Exchanging token issued by HelseId ::
 
 Exchanging token issued by "trusted issuer" ::
 
-        {
+    Original:
+    {
         "aud":"https://consumer.example.com",
         "iss":"https://trustedIssuer-sts.no",
         "exp":1443904177,
@@ -63,6 +67,7 @@ Exchanging token issued by "trusted issuer" ::
         "amr" : "bankId"
     }
 
+    Exchanged:
     {
         "aud":"https://consumer2.example.com",
         "iss":"https://helseid-sts.nhn.no",
@@ -88,3 +93,15 @@ The following code is an example of how to exchange a token ::
     var payload = new { token : _accessToken };
 
     var response = await client.RequestCustomGrantAsync("token_exchange", _options.Scope, payload);
+
+The details worth noting are: 
+- That the grand type is "token_exchange". 
+- The payload is an object with a token property which value is an valid access token.
+
+- The scopes requested are the scopes that one wish for the new access token. 
+
+
+In order to use the token exchange mechanism one needs to:
+- Be configured in HelseID to use the grant type `token_exchange`.
+- Obtain a valid access token from a third party.
+- Be configured to use the scopes requested in the exchange request.
