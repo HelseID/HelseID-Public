@@ -31,5 +31,9 @@ Welcome to HelseID's technical documentation!
    :hidden:
    :caption: Endpoints
 
+   endpoints/discovery
    endpoints/authorize
-   
+   endpoints/token
+   endpoints/introspection
+   endpoints/revocation
+   endpoints/endsession
