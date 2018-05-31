@@ -37,3 +37,10 @@ Welcome to HelseID's technical documentation!
    endpoints/introspection
    endpoints/revocation
    endpoints/endsession
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Reference
+
+   reference/claims_and_scopes
