@@ -31,7 +31,13 @@ Name                                          Example      Description
 ``helseid://claims/identity/pid``             04048900181  Personal identifier
 ``helseid://claims/identity/pid_pseudonym``                Personal identifier pseudonymized with HMAC
 ``helseid://claims/identity/security_level``  3            Defined by `Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor <https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli>`_ . Possible values are 2, 3 or 4. 
-``helseid://claims/client/ec/orgnr_parent``                Occures when the client is authenticated with an enterprise certificate. Will contains the organizational number in the SUBJECT field of the certificate.
-``helseid://claims/client/ec/orgnr_child``                 Occures when the client is authenticated with an enterprise certificate. Will contains the organizational number in the OU field of the certificate.
-``helseid://claims/client/ec/exp``                         Occures when the client is authenticated with an enterprise certificate. Will contains the expiration date of the certificate.
+``helseid://claims/client/ec/orgnr_parent``                The organizational number in the SUBJECT field of a certificate (Occures only when the client is authenticated with an enterprise certificate).
+``helseid://claims/client/ec/orgnr_child``                 The organizational number in the OU field of the certificate (Occures only when the client is authenticated with an enterprise certificate).
+``helseid://claims/client/ec/exp``                         The expiration date of the certificate (Occures only when the client is authenticated with an enterprise certificate).
 ============================================= ============ =====================================
+
+
+Standard claims
+^^^^^^^^^^^^^^^
+
+The token will also contain a set of standard claims originating from the `JSON Web Token <https://tools.ietf.org/html/rfc7519>`_ and `OpenID Connect <http://openid.net/specs/openid-connect-core-1_0.html#Claims>`_.
