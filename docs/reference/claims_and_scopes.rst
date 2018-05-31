@@ -31,4 +31,4 @@ Name                                          Example      Description
 ``helseid://scopes/identity/pid``             04048900181  Personal identifier
 ``helseid://scopes/identity/pid_pseudonym``                Personal identifier pseudonymized with HMAC
 ``helseid://scopes/identity/security_level``  3            Defined by `Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor <https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli>`_ . Possible values are 2, 3 or 4. 
-
+============================================= ============ =====================================
