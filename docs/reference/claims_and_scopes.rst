@@ -2,6 +2,8 @@ Claims and Scopes
 =================
 In addition to the standard scopes defined by the OpenID Connect, HelseID also supports a set of custom scopes and associated claims which can be used to retreive information about the authenticated user or client.
 
+We've created a small project containing all our custom claims and scopes (in addition to some other handy magical strings) which can be found on `nuget <https://www.nuget.org/packages/HelseId.Constants>`_ or `github <https://www.nuget.org/packages/HelseId.Constants>`_.
+
 
 Scopes
 ^^^^^^
