@@ -52,6 +52,8 @@ This process typically involves authentication of the end-user.
         english        
 ``max_age``
     if the user's logon session exceeds the max age (in seconds), the home realm will be shown
+``on_behalf_of``
+    the organization number of the organization reponsible for the current authentication. If using ID-porten, this information passed on to them and will be added to the total authentication count for the organization.
 ``acr_values``
     allows passing in additional authentication related information - identityserver special cases the following proprietary acr_values:
         

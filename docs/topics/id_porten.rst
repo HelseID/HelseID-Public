@@ -53,9 +53,31 @@ To preselect the IDP in ID-porten, you can add one of the following values to ``
 (URL encoding removed, and line breaks added for readability)
 
 
-    
 
+On Behalf Of
+^^^^^^^^^^^^
+Use of ID-porten requires that the organization using their services have accepted the terms of use ('bruksvilkår'). 
+As part of this, an organization should identity itself during an user authentication. The term for this mechanism is "On Behalf Of" (OBO from now on).
 
+A client in HelseID which uses ID-porten may be configured with one or more OBOs. A single OBO configuration in HelseID consists the following information:
 
+- On Behalf Of ID: Internal ID used between HelseID and ID-porten
+- The organization number used when accepting the terms of use of ID-porten (required)
+- Name: The name displayed for the organization or client application in ID-porten (required)
+- Description: Detailed information
+- Client URL: The link which should be used for the "Back" button in ID-porten (required)
 
+At authentication time a ``on_behalf_of`` parameter with value set to the organization number configured in the OBO entry should be passed to the authorization endpoint of HelseID.
 
+**Example - redirect directly to ID-porten and authenticate the user on behalf of the organization Udelt**
+::
+    GET /connect/authorize?
+        client_id=client1&
+        scope=openid&
+        response_type=id_token&
+        redirect_uri=https://myapp/callback&
+        state=abc&
+        nonce=xyz&
+        acr_values=idp:idporten-oidc&
+        on_behalf_of=912159523
+(URL encoding removed, and line breaks added for readability)

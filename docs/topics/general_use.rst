@@ -16,6 +16,7 @@ Topics specific for HelseID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Scopes and Claims
 
+
 - Preselecting IDP
 
 - Asymmetric secrets
