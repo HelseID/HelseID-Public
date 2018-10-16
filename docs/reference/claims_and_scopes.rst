@@ -36,7 +36,7 @@ Name                                          Example      Description
 ``helseid://claims/client/ec/orgnr_parent``                The organizational number in the SUBJECT field of a certificate (Occures only when the client is authenticated with an enterprise certificate).
 ``helseid://claims/client/ec/orgnr_child``                 The organizational number in the OU field of the certificate (Occures only when the client is authenticated with an enterprise certificate).
 ``helseid://claims/client/ec/exp``                         The expiration date of the certificate (Occures only when the client is authenticated with an enterprise certificate).
-``helseid://claims/client/on_behalf_of``                   The organization number which an ID-porten authentication was performed on behalf of, if any. Only included in the ID-token.
+``helseid://claims/client/on_behalf_of``                   The organization number which an ID-porten authentication was performed on behalf of. Only included if on-behalf-of was used. 
 
 ============================================= ============ =====================================
 

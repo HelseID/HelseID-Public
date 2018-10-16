@@ -69,7 +69,7 @@ A client in HelseID which uses ID-porten may be configured with one or more OBOs
 
 At authentication time a ``on_behalf_of`` parameter with value set to the organization number configured in the OBO entry should be passed to the authorization endpoint of HelseID.
 
-If an on-behalf-of valte is passed on to ID-porten, this will be reflected in the ID-token from HelseID in the claim "helseid://claims/client/on_behalf_of" which will contain the organization number which the user was authenticated on behalf of.
+If an on-behalf-of valte is passed on to ID-porten, this will be reflected in tokens from HelseID in the claim "helseid://claims/client/on_behalf_of" which will contain the organization number which the user was authenticated on behalf of.
 
 **Example - redirect directly to ID-porten and authenticate the user on behalf of the organization Udelt**
 ::
