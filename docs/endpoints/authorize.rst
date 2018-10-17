@@ -54,6 +54,12 @@ This process typically involves authentication of the end-user.
     if the user's logon session exceeds the max age (in seconds), the home realm will be shown
 ``on_behalf_of``
     the organization number of the organization reponsible for the current authentication. If using ID-porten, this information passed on to them and will be added to the total authentication count for the organization.
+``test_pid``
+    use this pid (fødselnummer) when logging into the TestIDP. Only used when the chosen IDP is the TestIDP
+``test_hpr_number``
+    use this HPR number when logging into the TestIDP. Only used when the chosen IDP is the TestIDP
+``test_security_level``
+    use this security level when logging into the TestIDP. Only used when the chosen IDP is the TestIDP
 ``acr_values``
     allows passing in additional authentication related information - identityserver special cases the following proprietary acr_values:
         
