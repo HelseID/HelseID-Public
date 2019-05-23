@@ -23,6 +23,8 @@ Welcome to HelseID's technical documentation!
    topics/general_use
    topics/access_resource
    topics/id_porten
+   topics/buypass
+   topics/commfides
    topics/client_authentication
    topics/token_exchange
 
