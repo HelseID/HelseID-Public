@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to HelseID's technical documentation!
-===================================
+=============================================
 
 .. toctree::
    :maxdepth: 2
