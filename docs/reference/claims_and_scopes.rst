@@ -47,9 +47,9 @@ Name                                             Example             Description
 
 Organization Number claims
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-HelseID provides two main groups of claims relating to organization identificators from Enhetsregisteret.
+HelseID provides two main groups of claims relating to organization identifiers from Enhetsregisteret.
 
-The first group is related to use of norwegian enterprise certificates (virksomhetssertifat) for authenticating the client. This includes all claims prefixed with the namespace ``helseid://claims/client/ec/``.
+The first group is related to use of Norwegian enterprise certificates (virksomhetssertifikat) for authenticating the client. This includes all claims prefixed with the namespace ``helseid://claims/client/ec/``.
 
 The second group are claims indicating the organization numbers independent of the mechanism used to derive them. This includes ``helseid://claims/client/claims/orgnr_parent`` and ``helseid://claims/client/claims/orgnr_child``.
 
@@ -57,7 +57,7 @@ Organization Number may be derived in the following ways:
 
  - Using the trust model currently being established in HelseID (partially dependent on self-service)
  - Using enterprise certificates
- - Using static claims on client configurations verified by NHN operations.
+
 
 
 
