@@ -1,10 +1,13 @@
+Passing organization identifier from a client application to HelseID
+=========================================================
+
 Background
-==========
+^^^^^^^^^^
 To use Kjernejournal (the norwegian Core Journal -\“KJ\”from now on), information about the place of treatment (in addition to\“juridisk person\”- in most cases the organization number of the municipality) is required to be included in access tokens issued by HelseID.
 This is information which only the system accessing KJ knows at the time of treatment. Therefore, mechanisms have been implemented to transmit this\information to HelseID when the user authenticates.
 
 Terms
-=====
+^^^^^^^^^^
 Kjernejournal (“KJ”)
 
 Pleie- og omsorgssektoren (“PLL”)
@@ -14,7 +17,7 @@ Subunit
 Unit - Municiplaity / Place of treatment
 
 Underlying technical mechanisms
-===============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In order to be able to pass information to HelseID in a secure way, support has been implemented for a mechanism in OpenID Connect called `Request Objects <https://www.google.com/url?q=https://translate.google.com/translate?hl%3Den%26prev%3D_t%26sl%3Dauto%26tl%3Den%26u%3Dhttps://openid.net/specs/openid-connect-core-1_0.html%2523JWTRequests%23JWTRequests&sa=D&ust=1582561394163000>`_. 
 
 This allows you to use a signed JWT to send parameters to the `authorization endpoint <https://www.google.com/url?q=https://translate.google.com/translate?hl%3Den%26prev%3D_t%26sl%3Dauto%26tl%3Den%26u%3Dhttps://helseid.readthedocs.io/no/latest/endpoints/authorize.html&sa=D&ust=1582561394163000>`_ \in HelseID. Note that HelseID does not support the "Passing a Request Object by Reference" mechanism.
@@ -22,30 +25,26 @@ This allows you to use a signed JWT to send parameters to the `authorization end
 The actual information is included in the signed JWT is wrapped in a structure based on the `Rich Authorization Requests specification <https://www.google.com/url?q=https://translate.google.com/translate?hl%3Den%26prev%3D_t%26sl%3Dauto%26tl%3Den%26u%3Dhttps://tools.ietf.org/html/draft-lodderstedt-oauth-rar-03&sa=D&ust=1582561394163000>`_ and the FHIR format. This results in a somewhat complex structure, but this is the basis for sending other information from a client to HelseID (role, "tjenestlig behov", technical information about the client application etc.) in a secure, standardized way.
 
 Prerequisites
-=====================
+^^^^^^^^^^^^^
 The following must be in place for HelseID to approve a submitted place of treatment.
 
-POST must be used
-*****************
+**POST must be used**
+
 
 Signed JWTs can be large, and there are `size restrictions in browsers and web servers <https://www.google.com/url?q=https://translate.google.com/translate?hl%3Den%26prev%3D_t%26sl%3Dauto%26tl%3Den%26u%3Dhttps://stackoverflow.com/a/812962&sa=D&ust=1582561394164000>`_ on GET requests. POST must be used when passing requests to the authorization endpoint in HelseID. This causes some complexity in native applications (\“tykke klienter\”) that use an integrated browser for authentication to HelseID. See our `sample code <https://www.google.com/url?q=https://translate.google.com/translate?hl%3Den%26prev%3D_t%26sl%3Dauto%26tl%3Den%26u%3Dhttps://github.com/HelseID/HelseID.Samples/tree/master/HelseId.Samples.RequestObjectsDemo&sa=D&ust=1582561394165000>`_ \for how this can be handled.
 
-Valid subunits must be pre-registered in HelseID
-************************************************
+**Valid subunits must be pre-registered in HelseID**
 
 When HelseID receives a sub-unit from the subject system, a validation is made if it is valid. The subunits that are valid for a professional system must therefore be pre-registered in HelseID. This is currently done in the HelseID portal.
 
-Public key for validating the signed Request Object JWT must be pre-registered in HelseID
-******************************************************************************************
+**Public key for validating the signed Request Object JWT must be pre-registered in HelseID**
 
 When HelseID receives a sub-unit from the professional system, the signature on the JWT in which it is located is validated. The public key to be used for this must be pre-registered in HelseID. This is currently done in the HelseID portal.
 
 Note that this is not necessarily the same key used against the `token endpoint <https://www.google.com/url?q=https://translate.google.com/translate?hl%3Den%26prev%3D_t%26sl%3Dauto%26tl%3Den%26u%3Dhttps://helseid.readthedocs.io/no/latest/endpoints/token.html&sa=D&ust=1582561394166000>`_ \in HelseID.
 
-Description
-===================
-Request Object
-*********************
+Description of Request Objects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A Request Object is sent as follows to the authorization endpoint:
 
 ::
@@ -125,8 +124,7 @@ The following structure must be used to provide the organization number for the 
    "value", "FHIR", "The identifier of the treatment site / sub-unit, ie a Norwegian organization number. Nine digits."
 
 
-Example of full request
-^^^^^^^^^^^^^^^^^^^^^^^
+**Example of full request**
 
 Below is an example of an http request to the authorization endpoint which includes a claim for a place of treatment.
 
@@ -176,12 +174,12 @@ The decoded version of the base64-encoded ``request`` parameter looks like this
         SIGNATURE
     }.
 
-Sample Code
-===================
+**Sample Code**
+
 An example of Request Objects implementation can be found at `https://github.com/HelseID/HelseID.Samples/tree/master/HelseId.Samples.RequestObjectsDemo <https://www.google.com/url?q=https://translate.google.com/translate?hl%3Den%26prev%3D_t%26sl%3Dauto%26tl%3Den%26u%3Dhttps://github.com/HelseID/HelseID.Samples/tree/master/HelseId.Samples.RequestObjectsDemo&sa=D&ust=1582561394190000>`_ \.
 
 References
-==================
+^^^^^^^^^^
 This is a list of specifications and codes we have based on.
 
 

@@ -27,6 +27,7 @@ Welcome to HelseID's technical documentation!
    topics/commfides
    topics/client_authentication
    topics/token_exchange
+   topics/using_request_objects
 
 .. toctree::
    :maxdepth: 2
